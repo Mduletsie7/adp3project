@@ -41,7 +41,7 @@ public class Animal {
         private String species;
         private String sound;
 
-        //Setters
+        //Setter
         public Builder setColour(String colour) {
             this.colour = colour;
             return this;
