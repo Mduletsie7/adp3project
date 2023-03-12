@@ -12,6 +12,7 @@ import za.ac.cput.domain.Animal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//AnimalFactoryTest class
 class AnimalFactoryTest {
     @Test
     public void test(){

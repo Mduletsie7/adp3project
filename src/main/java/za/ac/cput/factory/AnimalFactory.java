@@ -10,6 +10,7 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Animal;
 import za.ac.cput.util.Helper;
 
+//AnimalFactory class
 public class AnimalFactory {
     public static Animal createAnimal(String colour, String species, String sound) {
         if (Helper.isNullOrEmpty(colour) || Helper.isNullOrEmpty(species) || Helper.isNullOrEmpty(sound)) {
