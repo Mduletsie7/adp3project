@@ -20,21 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 //AnimalFactoryTest class starts here
 class AnimalFactoryTest {
-    @Test
-    public void test(){
-        Animal animal = AnimalFactory.createAnimal("Brown", "Dog", "Woof");
-        System.out.println(animal.toString());
-        assertNotNull(animal);
-    }
-
-    @Test
-    public void test_fail(){
-        Animal animal = AnimalFactory.createAnimal("", "Dog","Woof");
-        System.out.println(animal.toString());
-        assertNotNull(animal);
-    }
-
-    // Object Equality Test
+    // i. Object Equality Test
     @Test
     public void testCompareAnimalSpecies() {
         Animal animalSpecies = new Animal();
@@ -44,24 +30,7 @@ class AnimalFactoryTest {
     }
 
 
-    // DISABLING TEST
-    @Disabled("TODO: Still need to complete this method code")
-    @Test
-    public void test_animalColour() {
-    }
-
-    // TIMEOUT TEST
-    @Test
-    void testTimeOut() {
-        assertTimeout(Duration.ofMillis(100), () -> {
-            Thread.sleep(2000);
-
-            System.out.println("Animals rule!");
-        });
-    }
-
-
-    // Object Identity
+    // ii. Object Identity Test
     @Test
     public void testObjectIdentity() {
         Animal animal = new Animal();
@@ -69,18 +38,30 @@ class AnimalFactoryTest {
         Animal animal2 =  animal1;
         Animal animal3 = AnimalFactory.createAnimal("White", "Shark", "rete");
 
-        if(animal1 == animal1) {
-            System.out.println("Animals are identical");
-        }
-        if(animal1 == animal2) {
-            System.out.println("Animals are identical");
-        } else {
-            System.out.println("Animals are not identical");
-        }
-        if(animal1 == animal3) {
-            System.out.println("Animals are identical");
-        } else {
-            System.out.println("Animals are not identical");
-        }
+        assertSame(animal1, animal3);
+    }
+
+    // iii. Animal build Failing TEST
+    @Test
+    public void test_fail(){
+        Animal animal = AnimalFactory.createAnimal("", "Dog","Woof");
+        System.out.println(animal.toString());
+        assertNotNull(animal);
+    }
+
+    // iv. Timeout Test
+    @Test
+    void testTimeOut() {
+        assertTimeout(Duration.ofMillis(100), () -> {
+            Thread.sleep(2000);
+
+            System.out.println("Execution exceeded timout duration!");
+        });
+    }
+
+    // v. Disabling Test
+    @Disabled("TODO: Still need to code this method")
+    @Test
+    public void test_productInTransit() {
     }
 }
