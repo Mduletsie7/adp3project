@@ -1,7 +1,7 @@
 /**
  * ProductFactory.java
  * this is the ProductFactory Java class for building products
- * @author Mdumisi Kelvin Letsie
+ * @author Mdumisi Kelvin Letsie - 220120137
  * 11.03.2023
  */
 
