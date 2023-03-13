@@ -1,7 +1,7 @@
 /**
  * Product.java
  * this is the Product POJO Java class
- * @author Mdumisi Kelvin Letsie
+ * @author Mdumisi Kelvin Letsie - 220120137
  * 11.03.2023
  */
 
