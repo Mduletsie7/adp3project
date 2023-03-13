@@ -16,15 +16,27 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.*;
 class ProductFactoryTest {
 
-    // Product build Test
+    // i. Object Equality Test
     @Test
-    public void test() {
-        Product product = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "Samsung");
-        assertNotNull(product);
-        System.out.println(product.toString());
+    public void test_ProductEquality() {
+        Product product = new Product();
+        Product myProduct = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "Samsung");
+        String productName = myProduct.getProductName().toString();
+        assertEquals(productName, "Google Pixel 6A");
     }
 
-    // Product build Failing TEST
+    // ii. Object Identity Test
+    @Test
+    public void test_ObjectIdentity() {
+        Product product = new Product();
+        Product myProduct1 = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "Samsung");
+        Product myProduct2 =  myProduct1;
+        Product myProduct3 = ProductFactory.createProduct("Iphone 14 Pro", 394.99, "Smart Phones", "Apple");
+
+        assertSame(myProduct1, myProduct3);
+    }
+
+    // iii. Product build Failing TEST
     @Test
     public void test_fail() {
         Product product = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "");
@@ -32,52 +44,20 @@ class ProductFactoryTest {
         System.out.println(product.toString());
     }
 
-    // Object Equality Test
+    // iv. Timeout Test
     @Test
-    public void testCompareProductName() {
-        Product product = new Product();
-        Product myProduct = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "Samsung");
-        String productName = myProduct.getProductName().toString();
-        assertEquals(productName, "Google Pixel 6A");
-    }
-
-
-    // DISABLING TEST
-    @Disabled("TODO: Still need to complete this method code")
-    @Test
-    public void test_productInTransit() {
-    }
-
-    // TIMEOUT TEST
-    @Test
-    void testTimeOut() {
+    void test_TimeOut() {
         assertTimeout(Duration.ofMillis(100), () -> {
             Thread.sleep(2000);
 
-            System.out.println("I got here!");
+            System.out.println("Execution exceeded timeout duration!");
         });
     }
 
+    // v. Disabling Test
+    @Disabled("TODO: Still need to code this method")
     @Test
-    public void testObjectIdentity() {
-        Product product = new Product();
-        Product myProduct1 = ProductFactory.createProduct("Samsung Galaxy S21FE 5G", 284.99, "Smart Phones", "Samsung");
-        Product myProduct2 =  myProduct1;
-        Product myProduct3 = ProductFactory.createProduct("Iphone 14 Pro", 394.99, "Smart Phones", "Apple");
-
-        if(myProduct1 == myProduct1) {
-            System.out.println("Products are identical");
-        }
-        if(myProduct1 == myProduct2) {
-            System.out.println("Products are identical");
-        } else {
-            System.out.println("Product are not identical");
-        }
-        if(myProduct1 == myProduct3) {
-            System.out.println("Products are identical");
-        } else {
-            System.out.println("Products are not identical");
-        }
+    public void test_productInTransit() {
     }
 
 }
