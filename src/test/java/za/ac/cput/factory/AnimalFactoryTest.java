@@ -14,6 +14,8 @@ import za.ac.cput.domain.Product;
 
 import java.time.Duration;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 //AnimalFactoryTest class starts here
@@ -31,8 +33,6 @@ class AnimalFactoryTest {
         System.out.println(animal.toString());
         assertNotNull(animal);
     }
-
-
 
     // Object Equality Test
     @Test
