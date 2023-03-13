@@ -10,6 +10,9 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Animal;
+import za.ac.cput.domain.Product;
+
+import java.time.Duration;
 
 import java.time.Duration;
 
