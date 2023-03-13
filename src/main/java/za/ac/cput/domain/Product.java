@@ -1,3 +1,10 @@
+/**
+ * Product.java
+ * this is the Product POJO Java class
+ * @author Mdumisi Kelvin Letsie
+ * 11.03.2023
+ */
+
 package za.ac.cput.domain;
 
 import java.util.Objects;
@@ -126,4 +133,10 @@ public class Product {
                 ", inStock=" + inStock +
                 '}';
     }
+
+    public int compareProductName(String productName, String productName2) {
+        return this.productName.compareTo(productName2);
+        }
+
+
 }

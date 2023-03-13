@@ -1,3 +1,10 @@
+/**
+ * ProductFactory.java
+ * this is the ProductFactory Java class for building products
+ * @author Mdumisi Kelvin Letsie
+ * 11.03.2023
+ */
+
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Product;
